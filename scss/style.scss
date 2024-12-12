@@ -75,6 +75,7 @@
 //main section
 .main {
     position: relative;
+    height: 570px;
     &:after {
         //content: "";
         //display: inline-block;
@@ -91,17 +92,17 @@
     .container {
         display: flex;
     }
-    .bg-image {
+    .bg-container {
         position: absolute;
         display: flex;
         margin-top: -115px;
         height: 696px;
         width: 100%;
         z-index: -3;
-        &__left {
+        &__left-void {
            flex: 1 1 50%;
         }
-        &__right {
+        &__image {
             flex: 1 1 50%;
             background-image: url("../images/sec1_index-background-desktop.webp");
             background-repeat: no-repeat;
@@ -131,5 +132,156 @@
         img {
 
         }
+    }
+}
+
+//catalog section
+.catalog {
+    margin-top: 82px;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 80px;
+    }
+    &__item {
+        padding: 47px 52px;
+        background-color: vars.$grey-background-color;
+    }
+    &__title-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 62px;
+        margin-bottom: 39px;
+    }
+    &__title {
+        font-size: 36px;
+        text-transform: uppercase;
+    }
+    &__icon {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        background-color: vars.$green-background-color;
+        border-radius: 50%;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            left: 50%;
+        }
+        &_weight-loss::after {
+            transform: translate(-50%,-55%);
+            background-image: url("../images/sec-2_item-1_cat-slim.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 70px 97px;
+        }
+        &_weight-gain::after {
+            transform: translate(-50%,-50%);
+            background-image: url("../images/sec-2_img-2_cat-pro.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 134px 56px;
+        }
+    }
+    &__text {
+        margin-bottom: 23px;
+    }
+    &__button {
+        a {
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            &:after {
+                content: "";
+                width: 32px;
+                height: 12px;
+                background-image: url("../images/sec-2-item3-arrow.svg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+.how-it-works {
+    margin-top: 70px;
+    &__title {
+        margin-bottom: 72px;
+    }
+    &__text {
+
+    }
+    &__items-wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 100px;
+        height: 280px;
+    }
+    &__item {
+        //flex: 1 1 248px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        &:nth-child(1) {
+            &:after {
+                content: "1";
+                font-family: "Oswald", sans-serif;
+                font-size: 280px;
+                color: #F2F2F2;
+                position: absolute;
+                z-index: -1;
+                align-self: flex-end;
+                top: -40px;
+            }
+        }
+        &:nth-child(2) {
+            &:after {
+                content: "2";
+                font-family: "Oswald", sans-serif;
+                font-size: 280px;
+                color: #F2F2F2;
+                position: absolute;
+                z-index: -1;
+                align-self: flex-end;
+                top: -40px;
+            }
+        }
+        &:nth-child(3) {
+            &:after {
+                content: "3";
+                font-family: "Oswald", sans-serif;
+                font-size: 280px;
+                color: #F2F2F2;
+                position: absolute;
+                z-index: -1;
+                align-self: flex-end;
+                top: -40px;
+            }
+        }
+        &:nth-child(4) {
+            &:after {
+                content: "4";
+                font-family: "Oswald", sans-serif;
+                font-size: 280px;
+                color: #F2F2F2;
+                position: absolute;
+                z-index: -1;
+                align-self: flex-end;
+                top: -40px;
+            }
+        }
+    }
+    &__icon {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        background-color: vars.$green-background-color;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 31px;
     }
 }
