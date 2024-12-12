@@ -11,6 +11,11 @@
     max-width: 1220px;
     margin: 0 auto;
 }
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
 .title {
     font-family: "Oswald", sans-serif;
@@ -69,25 +74,43 @@
 
 //main section
 .main {
-    width: inherit;
     position: relative;
+    &:after {
+        //content: "";
+        //display: inline-block;
+        //position: absolute;
+        //height: 100vh;
+        //width: 100%;
+        //background-image: url(../images/sec1_index-background-desktop.webp);
+        //background-position: top right;
+        //background-repeat: no-repeat;
+        //background-size: initial;
+        //margin-top: -378px;
+        //z-index: -2;
+    }
     .container {
         display: flex;
-        &:after {
-            content: "";
-            display: inline-block;
-            height: 1000px;
-            width: 1000px;
-            position: absolute;
-            background-image: url(../images/sec1_index-background-desktop.webp);
-            background-position: center;
+    }
+    .bg-image {
+        position: absolute;
+        display: flex;
+        margin-top: -115px;
+        height: 696px;
+        width: 100%;
+        z-index: -3;
+        &__left {
+           flex: 1 1 50%;
+        }
+        &__right {
+            flex: 1 1 50%;
+            background-image: url("../images/sec1_index-background-desktop.webp");
             background-repeat: no-repeat;
-            margin-top: -378px;
-            top: 0;
-            right: 0;
-            z-index: -2;
+            background-size: initial;
+            background-position: top right;
+            background-color: vars.$green-background-color;
         }
     }
+
     &__left {
         margin-top: 111px;
         margin-left: 80px;
@@ -101,10 +124,12 @@
     }
     &__img {
         position: absolute;
-        top: 0;
-        left: 60.4%;
-        transform: translateX(-50%);
-        height: fit-content;
-        width: fit-content;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        z-index: -1;
+        img {
+
+        }
     }
 }
