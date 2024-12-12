@@ -70,13 +70,14 @@
 
 .main {
   position: relative;
+  height: 570px;
 }
 .main .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.main .bg-image {
+.main .bg-container {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -86,12 +87,12 @@
   width: 100%;
   z-index: -3;
 }
-.main .bg-image__left {
+.main .bg-container__left-void {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
 }
-.main .bg-image__right {
+.main .bg-container__image {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
@@ -123,6 +124,175 @@
           justify-content: center;
   z-index: -1;
 }
+.catalog {
+  margin-top: 82px;
+}
+.catalog__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 80px;
+}
+.catalog__item {
+  padding: 47px 52px;
+  background-color: #F2F2F2;
+}
+.catalog__title-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 62px;
+  margin-bottom: 39px;
+}
+.catalog__title {
+  font-size: 36px;
+  text-transform: uppercase;
+}
+.catalog__icon {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: #68B738;
+  border-radius: 50%;
+}
+.catalog__icon:after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 50%;
+}
+.catalog__icon_weight-loss::after {
+  -webkit-transform: translate(-50%, -55%);
+          transform: translate(-50%, -55%);
+  background-image: url("../images/sec-2_item-1_cat-slim.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70px 97px;
+}
+.catalog__icon_weight-gain::after {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-image: url("../images/sec-2_img-2_cat-pro.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 134px 56px;
+}
+.catalog__text {
+  margin-bottom: 23px;
+}
+.catalog__button a {
+  color: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 28px;
+}
+.catalog__button a:after {
+  content: "";
+  width: 32px;
+  height: 12px;
+  background-image: url("../images/sec-2-item3-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.how-it-works {
+  margin-top: 70px;
+}
+.how-it-works__title {
+  margin-bottom: 72px;
+}
+.how-it-works__items-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 100px;
+  height: 280px;
+}
+.how-it-works__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+.how-it-works__item:nth-child(1):after {
+  content: "1";
+  font-family: "Oswald", sans-serif;
+  font-size: 280px;
+  color: #F2F2F2;
+  position: absolute;
+  z-index: -1;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  top: -40px;
+}
+.how-it-works__item:nth-child(2):after {
+  content: "2";
+  font-family: "Oswald", sans-serif;
+  font-size: 280px;
+  color: #F2F2F2;
+  position: absolute;
+  z-index: -1;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  top: -40px;
+}
+.how-it-works__item:nth-child(3):after {
+  content: "3";
+  font-family: "Oswald", sans-serif;
+  font-size: 280px;
+  color: #F2F2F2;
+  position: absolute;
+  z-index: -1;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  top: -40px;
+}
+.how-it-works__item:nth-child(4):after {
+  content: "4";
+  font-family: "Oswald", sans-serif;
+  font-size: 280px;
+  color: #F2F2F2;
+  position: absolute;
+  z-index: -1;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  top: -40px;
+}
+.how-it-works__icon {
+  width: 80px;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #68B738;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 31px;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
