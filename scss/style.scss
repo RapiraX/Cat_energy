@@ -1,19 +1,135 @@
+@use "vars";
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-
 //общие стили
 :root {
     font-family: "Arial", sans-serif;
     font-size: 16px;
+    color: vars.$main-font-dark;
 }
 
 .container {
     max-width: 1220px;
     margin: 0 auto;
 }
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
+.title {
+    font-family: "Oswald", sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 60px;
+    //text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-family: "Oswald", sans-serif;
+    color: inherit;
+    text-transform: uppercase;
+}
+
+.para {
+    line-height: 24px;
+}
+
+.button {
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    line-height: 0;
+    text-transform: uppercase;
+    color: white;
+    background-color: vars.$green-background-color;
+    padding: 14px 26px;
+    border: none;
+    height: 54px;
+}
+
+//sections
 .header {
+    padding-top: 53px;
     &__inner {
         display: flex;
         justify-content: space-between;
+    }
+}
+.menu {
+    &__inner {
+        display: flex;
+        gap: 35px;
+        $main-font-dark: white;
+    }
+    .subtitle {
+
+    }
+    &__item {
+        a {
+            color: white;
+        }
+    }
+}
+
+//main section
+.main {
+    position: relative;
+    &:after {
+        //content: "";
+        //display: inline-block;
+        //position: absolute;
+        //height: 100vh;
+        //width: 100%;
+        //background-image: url(../images/sec1_index-background-desktop.webp);
+        //background-position: top right;
+        //background-repeat: no-repeat;
+        //background-size: initial;
+        //margin-top: -378px;
+        //z-index: -2;
+    }
+    .container {
+        display: flex;
+    }
+    .bg-image {
+        position: absolute;
+        display: flex;
+        margin-top: -115px;
+        height: 696px;
+        width: 100%;
+        z-index: -3;
+        &__left {
+           flex: 1 1 50%;
+        }
+        &__right {
+            flex: 1 1 50%;
+            background-image: url("../images/sec1_index-background-desktop.webp");
+            background-repeat: no-repeat;
+            background-size: initial;
+            background-position: top right;
+            background-color: vars.$green-background-color;
+        }
+    }
+
+    &__left {
+        margin-top: 111px;
+        margin-left: 80px;
+        width: 415px;
+    }
+    &__title {
+        margin-bottom: 40px;
+    }
+    &__subtitle {
+        margin-bottom: 52px + 14px;
+    }
+    &__img {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        z-index: -1;
+        img {
+
+        }
     }
 }
