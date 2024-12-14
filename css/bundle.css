@@ -77,6 +77,8 @@ a, a::after, a::before {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
+  border: 3px solid black;
+  background-color: transparent;
 }
 
 .title {
@@ -347,20 +349,20 @@ a, a::after, a::before {
 .live-example .background {
   position: absolute;
   width: 100%;
-  height: 462px;
+  height: 511px;
   background-color: #F2F2F2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  z-index: -3;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  z-index: -1;
   top: 135px;
 }
 .live-example .background__right {
   background-color: #EAEAEA;
-  width: 395px;
+  width: 413px;
   height: 100%;
 }
 .live-example__inner {
@@ -371,7 +373,7 @@ a, a::after, a::before {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.live-example__content {
+.live-example__content-column {
   max-width: 436px;
 }
 .live-example__title {
@@ -386,9 +388,8 @@ a, a::after, a::before {
   display: flex;
   gap: 64px;
   margin-top: 55px;
-  margin-bottom: 70px;
 }
-.info__wrapper {
+.info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -430,7 +431,10 @@ a, a::after, a::before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 24px;
+  gap: 20px;
+}
+.slider__subtitle {
+  border-bottom: 1px dotted #B8B8B8;
 }
 .slider__slider-bar {
   background-color: #DCDCDC;
@@ -468,19 +472,23 @@ a, a::after, a::before {
   border-radius: 50%;
 }
 
-.cat-image__left {
+.cat-image {
+  margin-left: -22px;
+}
+.cat-image__thick {
   margin-right: -5px;
 }
 
 .contacts {
   position: relative;
   padding-top: 95px;
+  margin-top: 70px;
 }
 .contacts__map {
   position: absolute;
   z-index: -2;
   top: 0;
-  left: 0;
+  left: -20px;
 }
 .contacts__card {
   display: -webkit-box;
@@ -516,6 +524,9 @@ a, a::after, a::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -525,5 +536,8 @@ a, a::after, a::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 25px;
 }
