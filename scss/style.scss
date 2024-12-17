@@ -13,12 +13,10 @@
     max-width: 1220px;
     margin: 0 auto;
 }
+
 .wrapper {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 20px;
-    border: 3px solid black;
-    background-color: transparent;
 }
 
 .title {
@@ -26,7 +24,6 @@
     font-size: 60px;
     font-weight: 400;
     line-height: 60px;
-    //text-transform: uppercase;
 }
 
 .subtitle {
@@ -50,6 +47,9 @@
     padding: 14px 26px;
     border: none;
     height: 54px;
+    &:hover{
+        color: black;
+    }
 }
 
 //sections
@@ -67,12 +67,16 @@
         gap: 35px;
         $main-font-dark: white;
     }
-    .subtitle {
-
-    }
     &__item {
-        a {
-            color: white;
+        color: white;
+        position: relative;
+        display: flex;
+        &:hover::after  {
+            content: "";
+            width: 100%;
+            top: 30px;
+            position: absolute;
+            border-bottom: 2px solid white;
         }
     }
 }
@@ -258,15 +262,8 @@
         width: 100%;
         height: 511px;
         background-color: vars.$grey-background-color;
-        display: flex;
-        justify-content: right;
         z-index: -1;
         top: 135px;
-        &__right {
-            background-color: #EAEAEA;
-            width: 413px;
-            height: 100%;
-        }
     }
     &__inner {
         display: flex;
@@ -281,7 +278,6 @@
     &__text {
         margin-bottom: 69px;
     }
-    //TODO изменить на span в html
     &__spent-wrapper {
         display: flex;
         gap: 64px;
@@ -370,9 +366,11 @@
     margin-top: 70px;
     &__map {
         position: absolute;
-        z-index: -2;
+        z-index: -1;
         top: 0;
-        left: -20px;
+        width: 100%;
+        height: 400px;
+        background-color: vars.$grey-background-color;
     }
     &__card {
         display: flex;

@@ -53,6 +53,7 @@ table {
 
 a, a::after, a::before {
   text-decoration: none;
+  color: inherit;
 }
 
 *,
@@ -76,9 +77,6 @@ a, a::after, a::before {
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
-  border: 3px solid black;
-  background-color: transparent;
 }
 
 .title {
@@ -110,6 +108,9 @@ a, a::after, a::before {
   border: none;
   height: 54px;
 }
+.button:hover {
+  color: black;
+}
 
 .header {
   padding-top: 53px;
@@ -132,8 +133,19 @@ a, a::after, a::before {
   display: flex;
   gap: 35px;
 }
-.menu__item a {
+.menu__item {
   color: white;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.menu__item:hover::after {
+  content: "";
+  width: 100%;
+  top: 30px;
+  position: absolute;
+  border-bottom: 2px solid white;
 }
 
 .main {
@@ -351,19 +363,8 @@ a, a::after, a::before {
   width: 100%;
   height: 511px;
   background-color: #F2F2F2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
   z-index: -1;
   top: 135px;
-}
-.live-example .background__right {
-  background-color: #EAEAEA;
-  width: 413px;
-  height: 100%;
 }
 .live-example__inner {
   display: -webkit-box;
@@ -486,9 +487,11 @@ a, a::after, a::before {
 }
 .contacts__map {
   position: absolute;
-  z-index: -2;
+  z-index: -1;
   top: 0;
-  left: -20px;
+  width: 100%;
+  height: 400px;
+  background-color: #F2F2F2;
 }
 .contacts__card {
   display: -webkit-box;
