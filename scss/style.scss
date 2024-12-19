@@ -283,8 +283,6 @@
         gap: 64px;
         margin-top: 55px;
     }
-    &__example-slider {
-    }
 }
 
 .info {
@@ -314,40 +312,48 @@
     }
 }
 
+//.slider {
+//    display: flex;
+//    justify-content: space-between;
+//    align-items: center;
+//    gap: 20px;
+//    &__subtitle {
+//        border-bottom: 1px dotted #B8B8B8;
+//    }
+//    &__slider-bar {
+//        background-color: #DCDCDC;
+//        border-radius: 6px;
+//        width: 428px;
+//        height: 6px;
+//        position: relative;
+//    }
+//    &__circle-big {
+//        display: flex;
+//        align-items: center;
+//        justify-content: center;
+//        position: absolute;
+//        top: 50%;
+//        left: 50%;
+//        transform: translate(-50%, -50%);
+//        width: 44px;
+//        height: 44px;
+//        background-color: white;
+//        border-radius: 50%;
+//        box-shadow: 0 1px 3px 0 black;
+//    }
+//    &__circle-small {
+//        width: 8px;
+//        height: 8px;
+//        background-color: vars.$green-background-color;
+//        border-radius: 50%;
+//    }
+//}
+
 .slider {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    &__subtitle {
-        border-bottom: 1px dotted #B8B8B8;
-    }
     &__slider-bar {
-        background-color: #DCDCDC;
-        border-radius: 6px;
         width: 428px;
         height: 6px;
-        position: relative;
-    }
-    &__circle-big {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 44px;
-        height: 44px;
-        background-color: white;
-        border-radius: 50%;
-        box-shadow: 0 1px 3px 0 black;
-    }
-    &__circle-small {
-        width: 8px;
-        height: 8px;
         background-color: vars.$green-background-color;
-        border-radius: 50%;
     }
 }
 
@@ -374,10 +380,10 @@
     }
     &__card {
         display: flex;
-        justify-content: space-between;
         max-width: 570px;
         padding: 60px 70px;
         background-color: white;
+        gap: 87px;
     }
     &__invite {
         flex: 0 1 163px;
