@@ -160,6 +160,7 @@
         position: relative;
         background-color: vars.$green-background-color;
         border-radius: 50%;
+
         &:after {
             content: "";
             position: absolute;
@@ -180,13 +181,13 @@
             background-image: url("../images/sec-2_img-2_cat-pro.svg");
             background-repeat: no-repeat;
             background-position: center;
-            //background-size: 134px 56px;
         }
     }
     &__text {
         margin-bottom: 23px;
     }
     &__button {
+        transition: transform 0.3s ease;
         a {
             color: inherit;
             display: flex;
@@ -200,6 +201,9 @@
                 background-repeat: no-repeat;
                 background-size: cover;
             }
+        }
+        &:hover {
+            transform: scale(1.03);
         }
     }
 }
@@ -312,49 +316,31 @@
     }
 }
 
-//.slider {
-//    display: flex;
-//    justify-content: space-between;
-//    align-items: center;
-//    gap: 20px;
-//    &__subtitle {
-//        border-bottom: 1px dotted #B8B8B8;
-//    }
-//    &__slider-bar {
-//        background-color: #DCDCDC;
-//        border-radius: 6px;
-//        width: 428px;
-//        height: 6px;
-//        position: relative;
-//    }
-//    &__circle-big {
-//        display: flex;
-//        align-items: center;
-//        justify-content: center;
-//        position: absolute;
-//        top: 50%;
-//        left: 50%;
-//        transform: translate(-50%, -50%);
-//        width: 44px;
-//        height: 44px;
-//        background-color: white;
-//        border-radius: 50%;
-//        box-shadow: 0 1px 3px 0 black;
-//    }
-//    &__circle-small {
-//        width: 8px;
-//        height: 8px;
-//        background-color: vars.$green-background-color;
-//        border-radius: 50%;
-//    }
-//}
-
 .slider {
+    display: flex;
+    gap: 24px;
     &__slider-bar {
-        width: 428px;
-        height: 6px;
-        background-color: vars.$green-background-color;
+        -webkit-appearance: none; /* Убираем стандартный стиль для Webkit-браузеров */
+        -moz-appearance: none;    /* Убираем стандартный стиль для Firefox */
+        appearance: none;         /* Убираем стандартный стиль для других браузеров */
+        width: 428px;              /* Задаем ширину слайдера */
+        height: 8px;              /* Задаем высоту трека */
+        background: #DCDCDC;         /* Цвет фона (трек слайдера) */
+        border-radius: 6px;       /* Скругляем углы */
+        outline: none;            /* Убираем фокусный контур */
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Убираем стандартный стиль */
+            -moz-appearance: none;    /* Для Firefox */
+            appearance: none;         /* Для других браузеров */
+            width: 34px;              /* Ширина ползунка */
+            height: 34px;             /* Высота ползунка */
+            background: white;      /* Цвет ползунка */
+            border-radius: 50%;       /* Скругляем ползунок в круг */
+            cursor: pointer;          /* Курсор в виде руки */
+            box-shadow: 0 1px 3px 0 black;
+        }
     }
+
 }
 
 //TODO соединить две картинки в одну, чтобы она могла масшитабироваться
@@ -391,7 +377,9 @@
     }
     &__adres {
         flex: 0 1 155px;
-        white-space: wrap;
+        p:nth-last-child(1) {
+            margin-top: 20px;
+        }
     }
 }
 

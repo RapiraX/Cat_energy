@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -269,6 +270,12 @@ a, a::after, a::before {
 .catalog__text {
   margin-bottom: 23px;
 }
+.catalog__button {
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
 .catalog__button a {
   color: inherit;
   display: -webkit-box;
@@ -286,6 +293,10 @@ a, a::after, a::before {
   background-image: url("../images/sec-2-item3-arrow.svg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+.catalog__button:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 
 .how-it-works {
@@ -390,6 +401,7 @@ a, a::after, a::before {
   gap: 64px;
   margin-top: 55px;
 }
+
 .info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -426,51 +438,29 @@ a, a::after, a::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 20px;
-}
-.slider__subtitle {
-  border-bottom: 1px dotted #B8B8B8;
+  gap: 24px;
 }
 .slider__slider-bar {
-  background-color: #DCDCDC;
-  border-radius: 6px;
-  width: 428px;
-  height: 6px;
-  position: relative;
+  -webkit-appearance: none; /* Убираем стандартный стиль для Webkit-браузеров */
+  -moz-appearance: none; /* Убираем стандартный стиль для Firefox */
+  appearance: none; /* Убираем стандартный стиль для других браузеров */
+  width: 428px; /* Задаем ширину слайдера */
+  height: 8px; /* Задаем высоту трека */
+  background: #DCDCDC; /* Цвет фона (трек слайдера) */
+  border-radius: 6px; /* Скругляем углы */
+  outline: none; /* Убираем фокусный контур */
 }
-.slider__circle-big {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 44px;
-  height: 44px;
-  background-color: white;
-  border-radius: 50%;
+.slider__slider-bar::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Убираем стандартный стиль */
+  -moz-appearance: none; /* Для Firefox */
+  appearance: none; /* Для других браузеров */
+  width: 34px; /* Ширина ползунка */
+  height: 34px; /* Высота ползунка */
+  background: white; /* Цвет ползунка */
+  border-radius: 50%; /* Скругляем ползунок в круг */
+  cursor: pointer; /* Курсор в виде руки */
   -webkit-box-shadow: 0 1px 3px 0 black;
           box-shadow: 0 1px 3px 0 black;
-}
-.slider__circle-small {
-  width: 8px;
-  height: 8px;
-  background-color: #68B738;
-  border-radius: 50%;
 }
 
 .cat-image {
@@ -497,12 +487,10 @@ a, a::after, a::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   max-width: 570px;
   padding: 60px 70px;
   background-color: white;
+  gap: 87px;
 }
 .contacts__invite {
   -webkit-box-flex: 0;
@@ -514,7 +502,9 @@ a, a::after, a::before {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 155px;
           flex: 0 1 155px;
-  white-space: wrap;
+}
+.contacts__adres p:nth-last-child(1) {
+  margin-top: 20px;
 }
 
 .footer {
