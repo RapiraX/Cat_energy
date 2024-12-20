@@ -174,7 +174,6 @@
             background-image: url("../images/sec-2_item-1_cat-slim.svg");
             background-repeat: no-repeat;
             background-position: center;
-            //background-size: 70px 97px;
         }
         &_weight-gain::after {
             transform: translate(-50%,-50%);
@@ -234,17 +233,10 @@
             align-self: flex-end;
             top: -40px;
         }
-        &:nth-child(1)::after {
-            content: "1";
-        }
-        &:nth-child(2)::after {
-            content: "2";
-        }
-        &:nth-child(3)::after {
-            content: "3";
-        }
-        &:nth-child(4)::after {
-            content: "4";
+        @for $i from 1 through 4 {
+            &:nth-child(#{$i})::after {
+                content: "#{$i}";
+            }
         }
     }
     &__icon {
@@ -317,9 +309,39 @@
 }
 
 .slider {
-    display: flex;
-    gap: 24px;
-    &__slider-bar {
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    &__cat-images-container {
+        position: relative;
+        width: 660px;
+        height: 500px;
+        overflow: hidden;
+        margin-bottom: 50px;
+    }
+    &__cat-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        &--before {
+            clip-path: inset(0 50% 0 0);
+            z-index: 1;
+        }
+        &--after {
+            clip-path: inset(0 0 0 50%);
+            z-index: 2;
+        }
+    }
+    &__bar-wrapper {
+        display: flex;
+        gap: 24px;
+    }
+    &__bar-range {
         -webkit-appearance: none; /* Убираем стандартный стиль для Webkit-браузеров */
         -moz-appearance: none;    /* Убираем стандартный стиль для Firefox */
         appearance: none;         /* Убираем стандартный стиль для других браузеров */
@@ -328,13 +350,14 @@
         background: #DCDCDC;         /* Цвет фона (трек слайдера) */
         border-radius: 6px;       /* Скругляем углы */
         outline: none;            /* Убираем фокусный контур */
+        pointer-events: auto;
         &::-webkit-slider-thumb {
             -webkit-appearance: none; /* Убираем стандартный стиль */
             -moz-appearance: none;    /* Для Firefox */
             appearance: none;         /* Для других браузеров */
             width: 34px;              /* Ширина ползунка */
             height: 34px;             /* Высота ползунка */
-            background: white;      /* Цвет ползунка */
+            background: vars.$green-background-color;      /* Цвет ползунка */
             border-radius: 50%;       /* Скругляем ползунок в круг */
             cursor: pointer;          /* Курсор в виде руки */
             box-shadow: 0 1px 3px 0 black;
@@ -343,13 +366,6 @@
 
 }
 
-//TODO соединить две картинки в одну, чтобы она могла масшитабироваться
-.cat-image {
-    margin-left: -22px;
-    &__thick {
-        margin-right: -5px;
-    }
-}
 
 //contacts section
 .contacts {
@@ -398,4 +414,8 @@
     display: flex;
     align-items: center;
     gap: 25px;
+    //TODO hover срабатывает на все иконки, нужно чтобы на отдельные
+    &:hover {
+        transform: scale(1.05);
+    }
 }

@@ -127,17 +127,19 @@
                                  <p class="live-example__example__sum">15 000 РУБ.</p>
                              </div>
                          </div>
-                         <div class="live-example__example-slider">
-                             <div class="live-example__cat-image cat-image">
-                                 <img src="images/sec4_img1_left.png" alt="thick cat" class="cat-image__thick">
-                                 <img src="images/sec4_img1_right.png" alt="thin cat" class="cat-image__thin">
-                             </div>
-                             <div class="live-example__slider slider">
-                                 <div class="slider__subtitle subtitle slider__before-text">было</div>
-                                 <form action="" method="get" class="slider__slider-bar-wrapper">
-                                     <label for="slider-bar"></label><input type="range" min="0" max="100" value="50" class="slider__slider-bar" id="slider-bar">
-                                 </form>
-                                 <div class="slider__subtitle subtitle slider__after-text">стало</div>
+                         <div class="slider">
+                             <div class="slider__wrapper">
+                                 <div class="slider__cat-images-container">
+                                     <img class="slider__cat-image slider__cat-image--before" src="images/sec4-fat_cat.webp" alt="thick cat">
+                                     <img class="slider__cat-image slider__cat-image--after" src="images/sec4-slim_cat.webp" alt="thin cat">
+                                 </div>
+                                 <div class="slider__bar-wrapper">
+                                     <div class="slider__subtitle slider__subtitle_before-text subtitle">было</div>
+                                     <form action="" method="get" class="slider__bar-form">
+                                         <label for="slider-bar-range"></label><input type="range" min="0" max="100" value="50" class="slider__bar-range" id="slider-bar-range">
+                                     </form>
+                                     <div class="slider__subtitle slider__subtitle_after-text subtitle">стало</div>
+                                 </div>
                              </div>
                          </div>
                      </div>
@@ -170,6 +172,7 @@
              </div>
          </footer>
          <script src="javascript/script.js"></script>
+         <script src="javascript/image_clipper.js"></script>
      </div>
 </body>
 </html>
