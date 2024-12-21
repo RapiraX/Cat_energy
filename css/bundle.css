@@ -108,9 +108,12 @@ a, a::after, a::before {
   padding: 14px 26px;
   border: none;
   height: 54px;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 .button:hover {
-  color: black;
+  color: #cacaca;
 }
 
 .header {
@@ -140,13 +143,45 @@ a, a::after, a::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .menu__item:hover::after {
   content: "";
   width: 100%;
+  -webkit-animation: scale-up-down 0.5s ease;
+          animation: scale-up-down 0.5s ease;
   top: 30px;
   position: absolute;
   border-bottom: 2px solid white;
+}
+@-webkit-keyframes scale-up-down {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes scale-up-down {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .main {
@@ -166,17 +201,17 @@ a, a::after, a::before {
   margin-top: -115px;
   height: 696px;
   width: 100%;
-  z-index: -3;
+  z-index: -2;
 }
 .main .bg-container__left-void {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 50%;
-          flex: 1 1 50%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
 }
 .main .bg-container__image {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 50%;
-          flex: 1 1 50%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
   background-image: url("../images/sec1_index-background-desktop.webp");
   background-repeat: no-repeat;
   background-size: initial;
@@ -199,11 +234,12 @@ a, a::after, a::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   z-index: -1;
+  margin-top: 30px;
+  margin-left: 31%;
 }
 .catalog {
   margin-top: 82px;
@@ -368,14 +404,25 @@ a, a::after, a::before {
 
 .live-example {
   position: relative;
+  margin-top: 11px;
+  padding-bottom: 70px;
 }
 .live-example .background {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   position: absolute;
   width: 100%;
-  height: 511px;
-  background-color: #F2F2F2;
+  height: 100%;
   z-index: -1;
-  top: 135px;
+}
+.live-example .background__bottom {
+  background-color: #F2F2F2;
+  width: 100%;
+  height: 70%;
 }
 .live-example__inner {
   display: -webkit-box;
@@ -389,12 +436,13 @@ a, a::after, a::before {
   max-width: 436px;
 }
 .live-example__title {
+  margin-top: 60px;
   margin-bottom: 146px;
 }
 .live-example__text {
   margin-bottom: 69px;
 }
-.live-example__spent-wrapper {
+.live-example__spent-info-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -503,24 +551,24 @@ a, a::after, a::before {
 .contacts {
   position: relative;
   padding-top: 95px;
-  margin-top: 70px;
+  background: #F2F2F2;
 }
 .contacts__map {
   position: absolute;
-  z-index: -1;
   top: 0;
   width: 100%;
-  height: 400px;
-  background-color: #F2F2F2;
+  height: 410px;
 }
 .contacts__card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   max-width: 570px;
   padding: 60px 70px;
   background-color: white;
   gap: 87px;
+  z-index: 1;
 }
 .contacts__invite {
   -webkit-box-flex: 0;
@@ -563,8 +611,10 @@ a, a::after, a::before {
       -ms-flex-align: center;
           align-items: center;
   gap: 25px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
-.social-media:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+.social-media__item:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }

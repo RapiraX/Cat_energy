@@ -47,8 +47,10 @@
     padding: 14px 26px;
     border: none;
     height: 54px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
     &:hover{
-        color: black;
+        color: #cacaca;
     }
 }
 
@@ -71,12 +73,25 @@
         color: white;
         position: relative;
         display: flex;
+        transition: all 0.5s ease-in-out;
         &:hover::after  {
             content: "";
             width: 100%;
+            animation: scale-up-down 0.5s ease;
             top: 30px;
             position: absolute;
             border-bottom: 2px solid white;
+        }
+        @keyframes scale-up-down {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(0.8);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
     }
 }
@@ -94,12 +109,12 @@
         margin-top: -115px;
         height: 696px;
         width: 100%;
-        z-index: -3;
+        z-index: -2;
         &__left-void {
-           flex: 1 1 50%;
+           flex: 0 1 50%;
         }
         &__image {
-            flex: 1 1 50%;
+            flex: 0 1 50%;
             background-image: url("../images/sec1_index-background-desktop.webp");
             background-repeat: no-repeat;
             background-size: initial;
@@ -122,9 +137,10 @@
     &__img {
         position: absolute;
         display: flex;
-        width: 100%;
         justify-content: center;
         z-index: -1;
+        margin-top: 30px;
+        margin-left: 31%;
         img {
 
         }
@@ -253,13 +269,21 @@
 //live-example section
 .live-example {
     position: relative;
+    margin-top: 11px;
+    padding-bottom: 70px;
+
     .background {
+        display: flex;
+        align-items: flex-end;
         position: absolute;
         width: 100%;
-        height: 511px;
-        background-color: vars.$grey-background-color;
+        height: 100%;
         z-index: -1;
-        top: 135px;
+        &__bottom {
+            background-color: vars.$grey-background-color;
+            width: 100%;
+            height: 70%;
+        }
     }
     &__inner {
         display: flex;
@@ -269,12 +293,13 @@
         max-width: 436px;
     }
     &__title {
+        margin-top: 60px;
         margin-bottom: 146px;
     }
     &__text {
         margin-bottom: 69px;
     }
-    &__spent-wrapper {
+    &__spent-info-wrapper {
         display: flex;
         gap: 64px;
         margin-top: 55px;
@@ -363,7 +388,6 @@
             box-shadow: 0 1px 3px 0 black;
         }
     }
-
 }
 
 
@@ -371,21 +395,21 @@
 .contacts {
     position: relative;
     padding-top: 95px;
-    margin-top: 70px;
+    background: vars.$grey-background-color;
     &__map {
         position: absolute;
-        z-index: -1;
         top: 0;
         width: 100%;
-        height: 400px;
-        background-color: vars.$grey-background-color;
+        height: 410px;
     }
     &__card {
         display: flex;
+        position: relative;
         max-width: 570px;
         padding: 60px 70px;
         background-color: white;
         gap: 87px;
+        z-index: 1;
     }
     &__invite {
         flex: 0 1 163px;
@@ -414,8 +438,8 @@
     display: flex;
     align-items: center;
     gap: 25px;
-    //TODO hover срабатывает на все иконки, нужно чтобы на отдельные
-    &:hover {
-        transform: scale(1.05);
+    transition: all 0.4s ease-in-out;
+    &__item:hover {
+        transform: scale(1.2);
     }
 }

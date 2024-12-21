@@ -32,7 +32,7 @@
              </div>
          </header>
          <main>
-             <section class="main">
+             <section class="main" id="main">
                  <!--сделано, чтобы bg image был всегда слева-->
                  <div class="bg-container">
                      <div class="bg-container__left-void"></div>
@@ -43,7 +43,7 @@
                          <h1 class="main__title title">Функциональное
                              питание для котов</h1>
                          <p class="main__subtitle subtitle">Занялся собой? Займись котом!</p>
-                         <button class="main__button button"><a href="#">подобрать программу</a></button>
+                         <button class="main__button button">подобрать программу</button>
                      </div>
                      <div class="main__img"><img src="images/sec-1_img-1.webp" alt="cat energy pack"></div>
                  </div>
@@ -110,7 +110,9 @@
                  </div>
              </section>
              <section class="live-example">
-                 <div class="background"></div>
+                 <div class="background">
+                     <div class="background__bottom"></div>
+                 </div>
                  <div class="container">
                      <div class="live-example__inner">
                          <div class="live-example__content-column">
@@ -129,9 +131,9 @@
                                      <p class="info__subtitle">затрачено времени</p>
                                  </div>
                              </div>
-                             <div class="live-example__spent-wrapper subtitle">
-                                 <p class="live-example__example__spent">Затраты на питание: </p>
-                                 <p class="live-example__example__sum">15 000 РУБ.</p>
+                             <div class="live-example__spent-info-wrapper subtitle">
+                                 <p>Затраты на питание: </p>
+                                 <p>15 000 РУБ.</p>
                              </div>
                          </div>
                          <div class="slider">
@@ -168,17 +170,17 @@
          <footer class="footer">
              <div class="container">
                  <div class="footer__inner">
-                     <a href="#" class="footer__logo"><img src="images/footer-logo%202.svg" alt=""></a>
+                     <a href="#main" class="footer__logo"><img src="images/footer-logo2.svg" alt="cat energy logo"></a>
                      <ul class="social-media">
-                         <li class="social-media__item"><a href="https://vk.com/"><img src="images/icon_vkontakte.svg" alt=""></a></li>
-                         <li class="social-media__item"><a href="https://www.instagram.com/"><img src="images/icon_instagram.svg" alt=""></a></li>
-                         <li class="social-media__item"><a href="https://www.facebook.com/"><img src="images/icon_facebook.svg" alt=""></a></li>
+                         <li class="social-media__item"><a href="https://vk.com/"><img src="images/icon_vkontakte.svg" alt="vkontakte logo"></a></li>
+                         <li class="social-media__item"><a href="https://www.instagram.com/"><img src="images/icon_instagram.svg" alt="instagram logo"></a></li>
+                         <li class="social-media__item"><a href="https://www.facebook.com/"><img src="images/icon_facebook.svg" alt="facebook logo"></a></li>
                      </ul>
-                     <a href="#" class="footer_html-academy__logo"><img src="images/logo_html.svg" alt=""></a>
+                     <a href="#" class="footer_html-academy__logo"><img src="images/logo_html.svg" alt="html academy logo"></a>
                  </div>
              </div>
          </footer>
-         <script src="javascript/script.js"></script>
+         <script src="javascript/ya-maps.js"></script>
          <script src="javascript/image_clipper.js"></script>
      </div>
 </body>
