@@ -10,12 +10,14 @@
 }
 
 .container {
-    max-width: 1220px;
+    max-width: 1240x;
     margin: 0 auto;
+    @include mixins.left-right-padding(20px)
 }
 
 .wrapper {
-    max-width: 1440px;
+    @include mixins.left-right-padding(vars.$global-padding-value);
+    max-width: 1440px + vars.$global-padding-value;
     margin: 0 auto;
 }
 
@@ -27,7 +29,7 @@
 }
 
 .subtitle {
-    font-size: 20px;
+    font-size: vars.$font-size-subtitle;
     font-family: "Oswald", sans-serif;
     color: inherit;
     text-transform: uppercase;
@@ -39,7 +41,7 @@
 
 .button {
     font-family: "Oswald", sans-serif;
-    font-size: 20px;
+    font-size: vars.$font-size-subtitle;
     line-height: 0;
     text-transform: uppercase;
     color: white;
@@ -49,6 +51,7 @@
     height: 54px;
     cursor: pointer;
     transition: all 0.4s ease-in-out;
+
     &:hover{
         color: #cacaca;
     }
@@ -56,11 +59,21 @@
 
 //sections
 .header {
-    padding-top: 53px;
+    // display: none;
     &__inner {
+        padding-top: 4.238%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+    &__logo {
+        img {
+            @media screen and (max-width: vars.$tablet-width) {
+                width: 174px;
+                height: 52px;  
+            }
+        }
+
     }
 }
 .menu {
@@ -71,6 +84,10 @@
     }
     &__item {
         color: white;
+        @media screen and (max-width: vars.$tablet-width) {
+            color: black;
+            font-size: 18px;
+        }
         position: relative;
         display: flex;
         transition: all 0.5s ease-in-out;
@@ -81,6 +98,9 @@
             top: 30px;
             position: absolute;
             border-bottom: 2px solid white;
+            @media screen and (max-width: vars.$tablet-width) {
+                border-bottom: 2px solid #68B738;
+            }
         }
         @keyframes scale-up-down {
             0% {
@@ -98,8 +118,10 @@
 
 //main section
 .main {
+    // display: none;
     position: relative;
     height: 570px;
+
     .container {
         display: flex;
     }
@@ -110,6 +132,9 @@
         height: 696px;
         width: 100%;
         z-index: -2;
+        @media screen and (max-width: vars.$tablet-width) {
+            display: none;
+        }
         &__left-void {
            flex: 0 1 50%;
         }
@@ -141,19 +166,21 @@
         z-index: -1;
         margin-top: 30px;
         margin-left: 31%;
-        img {
-
+        @media screen and (max-width: vars.$tablet-width) {
+            margin-left: 0;
+            margin-top: 300px;
         }
     }
 }
 
 //catalog section
 .catalog {
+    display: none;
     margin-top: 82px;
     &__inner {
         display: flex;
         justify-content: space-between;
-        gap: 80px;
+        gap: 6.56%
     }
     &__item {
         flex: 0 1 570px;
@@ -225,6 +252,7 @@
 
 //how-it-works section
 .how-it-works {
+    display: none;
     margin-top: 70px;
     &__title {
         margin-bottom: 72px;
@@ -268,6 +296,7 @@
 
 //live-example section
 .live-example {
+    display: none;
     position: relative;
     margin-top: 11px;
     padding-bottom: 70px;
@@ -288,9 +317,10 @@
     &__inner {
         display: flex;
         justify-content: space-between;
+
     }
     &__content-column {
-        max-width: 436px;
+        flex: 0 1 436px;
     }
     &__title {
         margin-top: 60px;
@@ -334,6 +364,7 @@
 }
 
 .slider {
+    flex: 0 1 660px;
     &__wrapper {
         display: flex;
         align-items: center;
@@ -341,15 +372,17 @@
     }
     &__cat-images-container {
         position: relative;
-        width: 660px;
-        height: 500px;
+        width: 100%;
+        // height: 500px;
+        padding-bottom: 76%;
         overflow: hidden;
         margin-bottom: 50px;
+        margin-top: 50px;
     }
     &__cat-image {
         position: absolute;
-        width: 100%;
-        height: 100%;
+        width: inherit;
+        height: inherit;
         object-fit: cover;
         top: 0;
         left: 0;
@@ -364,13 +397,17 @@
     }
     &__bar-wrapper {
         display: flex;
-        gap: 24px;
+        gap: 3.63%;
+        width: 100%;
+    }
+    &__bar-form {
+        width: 100%;
     }
     &__bar-range {
         -webkit-appearance: none; /* Убираем стандартный стиль для Webkit-браузеров */
         -moz-appearance: none;    /* Убираем стандартный стиль для Firefox */
         appearance: none;         /* Убираем стандартный стиль для других браузеров */
-        width: 428px;              /* Задаем ширину слайдера */
+        width: inherit;              /* Задаем ширину слайдера */
         height: 8px;              /* Задаем высоту трека */
         background: #DCDCDC;         /* Цвет фона (трек слайдера) */
         border-radius: 6px;       /* Скругляем углы */
@@ -390,9 +427,9 @@
     }
 }
 
-
 //contacts section
 .contacts {
+    display: none;
     position: relative;
     padding-top: 95px;
     background: vars.$grey-background-color;
@@ -424,9 +461,9 @@
 }
 
 .footer {
+    display: none;
     margin-top: 124px;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding: 4.8% 0;
     background-color: vars.$grey-background-color;
     &__inner {
         display: flex;

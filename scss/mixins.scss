@@ -1,0 +1,5 @@
+
+@mixin left-right-padding ($value) {
+    padding-left: $value;
+    padding-right: $value;
+}

@@ -1,3 +1,4 @@
+Команда в терминал для запуска sass watch npm run watch-css
 Основной стиль шрифта Oswald Regular
 Второстепенный arial regular
 Общая ширина 1440

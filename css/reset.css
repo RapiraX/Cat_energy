@@ -52,11 +52,13 @@ table {
 
 a, a::after, a::before {
   text-decoration: none;
+  color: inherit;
 }
 
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
+
+/*# sourceMappingURL=reset.css.map */
