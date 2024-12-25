@@ -1,61 +1,8 @@
 @use "reset.scss";
 @use "mixins.scss";
 @use "vars.scss";
+@import "common-styles.scss";
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-//общие стили
-:root {
-    font-family: "Arial", sans-serif;
-    font-size: 16px;
-    color: vars.$main-font-dark;
-}
-
-.container {
-    max-width: 1240x;
-    margin: 0 auto;
-    @include mixins.left-right-padding(20px)
-}
-
-.wrapper {
-    @include mixins.left-right-padding(vars.$global-padding-value);
-    max-width: 1440px + vars.$global-padding-value;
-    margin: 0 auto;
-}
-
-.title {
-    font-family: "Oswald", sans-serif;
-    font-size: 60px;
-    font-weight: 400;
-    line-height: 60px;
-}
-
-.subtitle {
-    font-size: vars.$font-size-subtitle;
-    font-family: "Oswald", sans-serif;
-    color: inherit;
-    text-transform: uppercase;
-}
-
-.para {
-    line-height: 24px;
-}
-
-.button {
-    font-family: "Oswald", sans-serif;
-    font-size: vars.$font-size-subtitle;
-    line-height: 0;
-    text-transform: uppercase;
-    color: white;
-    background-color: vars.$green-background-color;
-    padding: 14px 26px;
-    border: none;
-    height: 54px;
-    cursor: pointer;
-    transition: all 0.4s ease-in-out;
-
-    &:hover{
-        color: #cacaca;
-    }
-}
 
 //sections
 .header {
@@ -67,6 +14,7 @@
         align-items: center;
     }
     &__logo {
+        // margin-right: 4%;
         img {
             @media screen and (max-width: vars.$tablet-width) {
                 width: 174px;
@@ -79,24 +27,31 @@
 .menu {
     &__inner {
         display: flex;
-        gap: 35px;
-        $main-font-dark: white;
-    }
-    &__item {
+        max-width: 477px;
+        gap: 37px;
         color: white;
-        @media screen and (max-width: vars.$tablet-width) {
+        @media screen and (max-width: 1138px) {
             color: black;
+        }
+        @media screen and (max-width: 826px) {
+            color: black;
+            gap: 20px;
             font-size: 18px;
         }
-        position: relative;
+    }
+    &__item {
+        white-space: nowrap;
+        font-size: inherit;
+        color: inherit;
         display: flex;
         transition: all 0.5s ease-in-out;
+
         &:hover::after  {
             content: "";
+            position: absolute;
             width: 100%;
             animation: scale-up-down 0.5s ease;
-            top: 30px;
-            position: absolute;
+            top: - vars.$global-padding-value;
             border-bottom: 2px solid white;
             @media screen and (max-width: vars.$tablet-width) {
                 border-bottom: 2px solid #68B738;
@@ -119,20 +74,24 @@
 //main section
 .main {
     // display: none;
+    $container-height: 696px;
     position: relative;
-    height: 570px;
-
+    min-height: $container-height;
+    @media screen and (max-width: 1026px) {
+       height: 800px;
+    }
     .container {
         display: flex;
     }
     .bg-container {
         position: absolute;
         display: flex;
-        margin-top: -115px;
-        height: 696px;
-        width: 100%;
+        margin-top: -122px;
+        left: -30px;
+        height: $container-height;
+        width: calc(100% + 60px);
         z-index: -2;
-        @media screen and (max-width: vars.$tablet-width) {
+        @media screen and (max-width: 1138px) {
             display: none;
         }
         &__left-void {
@@ -142,13 +101,15 @@
             flex: 0 1 50%;
             background-image: url("../images/sec1_index-background-desktop.webp");
             background-repeat: no-repeat;
-            background-size: initial;
-            background-position: top right;
+            background-size: cover;
+            @media screen and (max-width: 1190px) {
+                background-image: none;
+            }
             background-color: vars.$green-background-color;
         }
     }
 
-    &__left {
+    &__content {
         margin-top: 111px;
         margin-left: 80px;
         width: 415px;
@@ -162,42 +123,63 @@
     &__img {
         position: absolute;
         display: flex;
-        justify-content: center;
+        height: auto;
         z-index: -1;
         margin-top: 30px;
-        margin-left: 31%;
-        @media screen and (max-width: vars.$tablet-width) {
+        margin-left: 530px;
+        @media screen and (max-width: 1138px) {
             margin-left: 0;
-            margin-top: 300px;
+            right: 0;
         }
+        @media screen and (max-width: 1026px) {
+            margin-top: 320px;
+        }    
     }
 }
 
 //catalog section
 .catalog {
-    display: none;
-    margin-top: 82px;
+    // display: none;счмс 
     &__inner {
         display: flex;
         justify-content: space-between;
-        gap: 6.56%
+        gap: 6.56%;
+        @media screen and (max-width: vars.$tablet-width) {
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+            max-height: 580px;
+        }
     }
     &__item {
-        flex: 0 1 570px;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+        "image title"
+        "para para"
+        "button button";
+        @media screen and (max-width: vars.$tablet-width) {
+            grid-template-areas: 
+            "title image"
+            "para image"
+            "button image";
+        }
+        margin-top: 82px;
         padding: 47px 52px;
         background-color: vars.$grey-background-color;
     }
-    &__title-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 62px;
-        margin-bottom: 39px;
-    }
+
     &__title {
         font-size: 36px;
         text-transform: uppercase;
     }
     &__icon {
+        grid-area: image;
+        @media screen and (max-width: vars.$tablet-width) {
+            width: 150px;
+            height: 150px;
+        }
         width: 100px;
         height: 100px;
         position: relative;
@@ -226,9 +208,11 @@
         }
     }
     &__text {
+        grid-area: para;
         margin-bottom: 23px;
     }
     &__button {
+        grid-area: button;
         transition: transform 0.3s ease;
         a {
             color: inherit;
@@ -258,7 +242,13 @@
         margin-bottom: 72px;
     }
     &__items-wrapper {
-        display: flex;
+        //TODO привести в порядок
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        @media screen and (max-width: vars.$tablet-width) {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
         justify-content: space-between;
         height: 280px;
     }
@@ -296,7 +286,7 @@
 
 //live-example section
 .live-example {
-    display: none;
+    // display: none;
     position: relative;
     margin-top: 11px;
     padding-bottom: 70px;
@@ -317,7 +307,10 @@
     &__inner {
         display: flex;
         justify-content: space-between;
-
+        @media screen and (max-width: vars.$tablet-width) {
+            flex-direction: column;
+            justify-content: center; 
+        }
     }
     &__content-column {
         flex: 0 1 436px;
@@ -337,9 +330,18 @@
 }
 
 .info {
-    display: flex;
-    gap: 42px;
-    text-align: center;
+    display: none;
+    // display: grid;
+    grid-template-rows: auto auto;
+    @media screen and (max-width: vars.$tablet-width) {
+        grid-template-columns: auto auto;
+    }
+    row-gap: 55px;
+    &__items-wrapper {
+        display: flex;
+        gap: 42px;
+        text-align: center;
+    }
     &__item {
         flex: 0 1 162px;
     }
@@ -360,6 +362,17 @@
         background-color: vars.$grey-background-color;
         width: fit-content;
         margin: -8px auto 0;
+    }
+    &__spent-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 64px;
+        @media screen and (max-width: vars.$tablet-width) {
+            grid-template-columns: auto;
+            grid-template-rows: min-content;
+            row-gap: 9px;
+            text-align: right;
+        }
     }
 }
 
@@ -461,7 +474,7 @@
 }
 
 .footer {
-    display: none;
+    // display: none;
     margin-top: 124px;
     padding: 4.8% 0;
     background-color: vars.$grey-background-color;
