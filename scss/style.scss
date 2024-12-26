@@ -8,13 +8,14 @@
 .header {
     // display: none;
     &__inner {
-        padding-top: 4.238%;
+        padding-top: 53px;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
     &__logo {
-        // margin-right: 4%;
+        width: 202px;
+        height: 59px;
         img {
             @media screen and (max-width: vars.$tablet-width) {
                 width: 174px;
@@ -29,20 +30,18 @@
         display: flex;
         max-width: 477px;
         gap: 37px;
+        line-height: 0;
         color: white;
         @media screen and (max-width: 1138px) {
             color: black;
         }
         @media screen and (max-width: 826px) {
-            color: black;
             gap: 20px;
             font-size: 18px;
         }
     }
     &__item {
         white-space: nowrap;
-        font-size: inherit;
-        color: inherit;
         display: flex;
         transition: all 0.5s ease-in-out;
 
@@ -74,7 +73,7 @@
 //main section
 .main {
     // display: none;
-    $container-height: 696px;
+    $container-height: 694px;
     position: relative;
     min-height: $container-height;
     @media screen and (max-width: 1026px) {
@@ -112,7 +111,7 @@
     &__content {
         margin-top: 111px;
         margin-left: 80px;
-        width: 415px;
+        max-width: 415px;
     }
     &__title {
         margin-bottom: 40px;
@@ -127,6 +126,10 @@
         z-index: -1;
         margin-top: 30px;
         margin-left: 530px;
+        img {
+            width: 552px;
+            height: 499px;
+        }
         @media screen and (max-width: 1138px) {
             margin-left: 0;
             right: 0;
@@ -139,33 +142,35 @@
 
 //catalog section
 .catalog {
-    // display: none;счмс 
+    // display: none;
     &__inner {
         display: flex;
         justify-content: space-between;
-        gap: 6.56%;
-        @media screen and (max-width: vars.$tablet-width) {
-            flex-direction: column;
+
+        margin-top: 82px;
+        gap: clamp(30px, 3%, 60px);
+        @media screen and (max-width: 1033px) {
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
-            max-height: 580px;
         }
     }
     &__item {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 162px 1fr;
         grid-template-rows: auto auto auto;
         grid-template-areas: 
         "image title"
         "para para"
         "button button";
-        @media screen and (max-width: vars.$tablet-width) {
+        @media screen and (max-width: 1033px) {
+            grid-template-columns: auto 200px;
+            grid-template-rows: auto auto auto;
             grid-template-areas: 
             "title image"
             "para image"
             "button image";
         }
-        margin-top: 82px;
+        flex: 1 1 570px;
         padding: 47px 52px;
         background-color: vars.$grey-background-color;
     }
@@ -173,12 +178,16 @@
     &__title {
         font-size: 36px;
         text-transform: uppercase;
+        align-self: center;
+        margin-bottom: 39px;
+
     }
     &__icon {
         grid-area: image;
-        @media screen and (max-width: vars.$tablet-width) {
-            width: 150px;
-            height: 150px;
+        margin-bottom: 39px;
+        @media screen and (max-width: 1033px) {
+            width: 200px;
+            height: 200px;
         }
         width: 100px;
         height: 100px;
@@ -187,22 +196,44 @@
         border-radius: 50%;
 
         &:after {
+            //container для отсчета относительно центра
             content: "";
             position: absolute;
             width: 150px;
             height: 150px;
+            @media screen and (max-width: 1033px) {
+                width: 300px;
+                height: 300px;
+            }
             top: 50%;
             left: 50%;
         }
+        //сами картинки
         &_weight-loss::after {
             transform: translate(-50%,-55%);
             background-image: url("../images/sec-2_item-1_cat-slim.svg");
+            $img-width: 70px;
+            $img-height: 97px;
+
+            @media screen and (max-width: 1033px) {
+                background-size: contain;
+                width: $img-width * 2;
+                height: $img-height * 2;
+            }
             background-repeat: no-repeat;
             background-position: center;
         }
         &_weight-gain::after {
             transform: translate(-50%,-50%);
             background-image: url("../images/sec-2_img-2_cat-pro.svg");
+
+            $img-width: 134px;
+            $img-height: 56px;
+            @media screen and (max-width: 1033px) {
+                background-size: contain;
+                width: $img-width * 2;
+                height: $img-height * 2;
+            }
             background-repeat: no-repeat;
             background-position: center;
         }
@@ -210,6 +241,9 @@
     &__text {
         grid-area: para;
         margin-bottom: 23px;
+        @media screen and (max-width: 1033px) {
+            padding-right: clamp(20px, 10%, 50px);
+        }
     }
     &__button {
         grid-area: button;
@@ -236,7 +270,8 @@
 
 //how-it-works section
 .how-it-works {
-    display: none;
+    // display: none;
+    // overflow: hidden;
     margin-top: 70px;
     &__title {
         margin-bottom: 72px;
@@ -244,28 +279,38 @@
     &__items-wrapper {
         //TODO привести в порядок
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        @media screen and (max-width: vars.$tablet-width) {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: clamp(25px, 5%, 90px);
+        row-gap: 120px;
+        @media screen and (max-width: 920px) {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
         }
         justify-content: space-between;
-        height: 280px;
     }
     &__item {
-        flex: 0 1 248px;
+        max-width: 248px;
+
         display: flex;
         flex-direction: column;
         position: relative;
+
         &:after {
             font-family: "Oswald", sans-serif;
             font-size: 280px;
-            line-height: 280px;
-            color: vars.$grey-background-color;
+            @media screen and (max-width: 1183px) {
+                font-size: 250px;
+                top: -12px;
+            }
+            @media screen and (max-width: 920px) {
+                font-size: 280px;
+                top: -40px;
+            }
             position: absolute;
             z-index: -1;
-            align-self: flex-end;
-            top: -40px;
+            color: vars.$grey-background-color;
+            top: -30px;
+            right: 0;
         }
         @for $i from 1 through 4 {
             &:nth-child(#{$i})::after {
@@ -288,26 +333,25 @@
 .live-example {
     // display: none;
     position: relative;
-    margin-top: 11px;
-    padding-bottom: 70px;
-
-    .background {
-        display: flex;
-        align-items: flex-end;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        &__bottom {
-            background-color: vars.$grey-background-color;
-            width: 100%;
-            height: 70%;
-        }
-    }
+    margin-top: 150px;
+    padding: 70px 20px 0;
+    // .background {
+    //     display: flex;
+    //     align-items: flex-end;
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 100%;
+    //     z-index: -1;
+    //     &__bottom {
+    //         background-color: vars.$grey-background-color;
+    //         width: 100%;
+    //         height: 70%;
+    //     }
+    // }
     &__inner {
         display: flex;
         justify-content: space-between;
-        @media screen and (max-width: vars.$tablet-width) {
+        @media screen and (max-width: 1148px) {
             flex-direction: column;
             justify-content: center; 
         }
@@ -330,10 +374,9 @@
 }
 
 .info {
-    display: none;
-    // display: grid;
+    display: grid;
     grid-template-rows: auto auto;
-    @media screen and (max-width: vars.$tablet-width) {
+    @media screen and (max-width: 1148px) {
         grid-template-columns: auto auto;
     }
     row-gap: 55px;
@@ -365,9 +408,10 @@
     }
     &__spent-wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 64px;
-        @media screen and (max-width: vars.$tablet-width) {
+        grid-template-columns: auto auto;
+        column-gap: clamp(20px, 5%, 64px);
+        text-wrap: nowrap;
+        @media screen and (max-width: 1148px) {
             grid-template-columns: auto;
             grid-template-rows: min-content;
             row-gap: 9px;
@@ -442,23 +486,35 @@
 
 //contacts section
 .contacts {
-    display: none;
+    // display: none;
     position: relative;
     padding-top: 95px;
     background: vars.$grey-background-color;
+    height: 410px;
     &__map {
         position: absolute;
+        @media screen and (max-width: 824px) {
+            position: relative;
+        }
         top: 0;
         width: 100%;
-        height: 410px;
+
     }
     &__card {
         display: flex;
         position: relative;
         max-width: 570px;
+        justify-content: space-between;
+        @media screen and (max-width: 824px) {
+            max-width: 100%;
+            margin-left: 0;
+        }
+        @media screen and (max-width: 1376px) {
+            margin-left: 30px;
+        }
         padding: 60px 70px;
         background-color: white;
-        gap: 87px;
+        // gap: 87px;
         z-index: 1;
     }
     &__invite {
@@ -470,13 +526,16 @@
         p:nth-last-child(1) {
             margin-top: 20px;
         }
+        @media screen and (max-width: 824px) {
+            text-align: right;
+        }
     }
 }
 
 .footer {
     // display: none;
-    margin-top: 124px;
-    padding: 4.8% 0;
+
+    padding: 57px 20px 0;
     background-color: vars.$grey-background-color;
     &__inner {
         display: flex;
