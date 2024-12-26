@@ -90,6 +90,7 @@
         height: $container-height;
         width: calc(100% + 60px);
         z-index: -2;
+
         @media screen and (max-width: 1138px) {
             display: none;
         }
@@ -101,10 +102,11 @@
             background-image: url("../images/sec1_index-background-desktop.webp");
             background-repeat: no-repeat;
             background-size: cover;
+            background-color: vars.$green-background-color;
+            
             @media screen and (max-width: 1190px) {
                 background-image: none;
             }
-            background-color: vars.$green-background-color;
         }
     }
 
@@ -112,6 +114,10 @@
         margin-top: 111px;
         margin-left: 80px;
         max-width: 415px;
+
+        @media screen and (max-width: 1026px) {
+            margin-top: 62px;
+        }  
     }
     &__title {
         margin-bottom: 40px;
@@ -120,23 +126,26 @@
         margin-bottom: 52px + 14px;
     }
     &__img {
-        position: absolute;
-        display: flex;
-        height: auto;
-        z-index: -1;
-        margin-top: 30px;
-        margin-left: 530px;
+            position: absolute;
+            z-index: -1;
+            top: 30px;
+            right: 21%;
+            @media screen and (max-width: 1269px) {
+                right: 10%;
+            }
+            
         img {
+            height: auto;
             width: 552px;
-            height: 499px;
-        }
-        @media screen and (max-width: 1138px) {
-            margin-left: 0;
-            right: 0;
-        }
-        @media screen and (max-width: 1026px) {
-            margin-top: 320px;
-        }    
+            height: auto;
+
+            // @media screen and (max-width: 1138px) {
+            //     margin-left: 430px;
+            // }
+            // @media screen and (max-width: 1026px) {
+            //     margin-left: 0;
+            // }   
+        } 
     }
 }
 
@@ -487,35 +496,39 @@
 //contacts section
 .contacts {
     // display: none;
+    $container-height: 410px;
     position: relative;
     padding-top: 95px;
     background: vars.$grey-background-color;
-    height: 410px;
+    padding-bottom: 150px;
+    @media screen and (max-width: 824px) {
+        padding-bottom: 0;
+    }
     &__map {
         position: absolute;
         @media screen and (max-width: 824px) {
             position: relative;
         }
-        top: 0;
         width: 100%;
-
+        height: $container-height;
+        top: 0;
     }
     &__card {
         display: flex;
         position: relative;
         max-width: 570px;
         justify-content: space-between;
-        @media screen and (max-width: 824px) {
-            max-width: 100%;
-            margin-left: 0;
-        }
+        padding: 60px 70px;
+        background-color: white;
+        z-index: 1;
         @media screen and (max-width: 1376px) {
             margin-left: 30px;
         }
-        padding: 60px 70px;
-        background-color: white;
-        // gap: 87px;
-        z-index: 1;
+        @media screen and (max-width: 824px) {
+            max-width: 100%;
+            margin-left: 0;
+            // margin-top: 67px;
+        }
     }
     &__invite {
         flex: 0 1 163px;
@@ -535,7 +548,7 @@
 .footer {
     // display: none;
 
-    padding: 57px 20px 0;
+    padding: 57px 20px;
     background-color: vars.$grey-background-color;
     &__inner {
         display: flex;

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -60,6 +61,19 @@ a, a::after, a::before {
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+img {
+  /* Запрещает выделение изображения */
+  user-select: none;
+  /* Делает изображение блочным элементом */
+  display: block;
+  /* Максимальная ширина не больше родителя */
+  max-width: 100%;
+  /* Сохраняет пропорции при изменении размера */
+  height: auto;
+  /* Убирает синюю рамку при клике в некоторых браузерах */
+  outline: none;
 }
 
 /*# sourceMappingURL=reset.css.map */

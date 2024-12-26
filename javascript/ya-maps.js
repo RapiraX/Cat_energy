@@ -21,7 +21,7 @@ function init(){
     myMap.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
     myMap.controls.remove('zoomControl'); // удаляем контрол зуммирования
     myMap.controls.remove('rulerControl'); // удаляем контрол правил
-    // myMap.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+    myMap.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
 
     myMap.geoObjects.add(placemark);
 }
