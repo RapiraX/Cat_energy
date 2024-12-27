@@ -7,6 +7,7 @@
 //sections
 .header {
     // display: none;
+
     &__inner {
         padding-top: 53px;
         display: flex;
@@ -16,35 +17,38 @@
     &__logo {
         width: 202px;
         height: 59px;
+        margin-right: 50px;
         img {
-            @media screen and (max-width: vars.$tablet-width) {
+            @media screen and (max-width: 826px) {
                 width: 174px;
                 height: 52px;  
             }
         }
-
     }
 }
 .menu {
+    flex: 0 1 477px;
     &__inner {
         display: flex;
-        max-width: 477px;
-        gap: 37px;
+        flex-wrap: wrap;
+        width: 100%;
         line-height: 0;
+        justify-content: space-between;
+        gap: 15px;
         color: white;
         @media screen and (max-width: 1138px) {
             color: black;
         }
         @media screen and (max-width: 826px) {
-            gap: 20px;
             font-size: 18px;
+            padding-bottom: 4px;
         }
     }
     &__item {
-        white-space: nowrap;
         display: flex;
         transition: all 0.5s ease-in-out;
-
+        text-wrap: wrap;
+        white-space: nowrap;
         &:hover::after  {
             content: "";
             position: absolute;
@@ -130,8 +134,14 @@
             z-index: -1;
             top: 30px;
             right: 21%;
+            @media screen and (max-width: 927px) {
+                top: 35%;
+            }
             @media screen and (max-width: 1269px) {
-                right: 10%;
+                right: 5%;
+            }
+            @media screen and (max-width: 1191px) {
+                right: 0;
             }
             
         img {
