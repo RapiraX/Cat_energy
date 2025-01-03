@@ -80,9 +80,11 @@
     $container-height: 694px;
     position: relative;
     min-height: $container-height;
-    @media screen and (max-width: 1026px) {
-       height: 800px;
+    
+    @media screen and (max-width: 1138px) {
+        min-height: 584px;
     }
+
     .container {
         display: flex;
     }
@@ -147,14 +149,7 @@
         img {
             height: auto;
             width: 552px;
-            height: auto;
-
-            // @media screen and (max-width: 1138px) {
-            //     margin-left: 430px;
-            // }
-            // @media screen and (max-width: 1026px) {
-            //     margin-left: 0;
-            // }   
+            height: auto; 
         } 
     }
 }
@@ -165,7 +160,10 @@
     &__inner {
         display: flex;
         justify-content: space-between;
+        @media screen and (max-width: 1139px) {
+            margin-top: 0;
 
+        }
         margin-top: 82px;
         gap: clamp(30px, 3%, 60px);
         @media screen and (max-width: 1033px) {
@@ -290,21 +288,19 @@
 //how-it-works section
 .how-it-works {
     // display: none;
-    // overflow: hidden;
     margin-top: 70px;
     &__title {
         margin-bottom: 72px;
     }
     &__items-wrapper {
-        //TODO привести в порядок
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        column-gap: clamp(25px, 5%, 90px);
-        row-gap: 120px;
         @media screen and (max-width: 920px) {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
         }
+        column-gap: clamp(25px, 5%, 90px);
+        row-gap: 120px;
         justify-content: space-between;
     }
     &__item {
@@ -352,21 +348,18 @@
 .live-example {
     // display: none;
     position: relative;
-    margin-top: 150px;
     padding: 70px 20px 0;
-    // .background {
-    //     display: flex;
-    //     align-items: flex-end;
-    //     position: absolute;
-    //     width: 100%;
-    //     height: 100%;
-    //     z-index: -1;
-    //     &__bottom {
-    //         background-color: vars.$grey-background-color;
-    //         width: 100%;
-    //         height: 70%;
-    //     }
-    // }
+    
+    //TODO сделать шире
+    .background {
+        position: absolute;
+        width: 100%;
+        height: 800px;
+        top: 262px;
+        left: 0;
+        z-index: -1;
+        background-color: vars.$grey-background-color;
+    }
     &__inner {
         display: flex;
         justify-content: space-between;
@@ -425,6 +418,7 @@
         width: fit-content;
         margin: -8px auto 0;
     }
+    //TODO сделать так чтобы фраза "затраты на питание" сразу не была сжата при широком экране
     &__spent-wrapper {
         display: grid;
         grid-template-columns: auto auto;
@@ -449,8 +443,7 @@
     &__cat-images-container {
         position: relative;
         width: 100%;
-        // height: 500px;
-        padding-bottom: 76%;
+        height: 500px;
         overflow: hidden;
         margin-bottom: 50px;
         margin-top: 50px;
@@ -459,7 +452,7 @@
         position: absolute;
         width: inherit;
         height: inherit;
-        object-fit: cover;
+        object-fit: contain;
         top: 0;
         left: 0;
         &--before {
@@ -508,6 +501,7 @@
     // display: none;
     $container-height: 410px;
     position: relative;
+    margin-top: 67px;
     padding-top: 95px;
     background: vars.$grey-background-color;
     padding-bottom: 150px;

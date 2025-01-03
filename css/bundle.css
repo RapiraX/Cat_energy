@@ -207,9 +207,9 @@ img {
   position: relative;
   min-height: 694px;
 }
-@media screen and (max-width: 1026px) {
+@media screen and (max-width: 1138px) {
   .main {
-    height: 800px;
+    min-height: 584px;
   }
 }
 .main .container {
@@ -292,6 +292,11 @@ img {
   justify-content: space-between;
   margin-top: 82px;
   gap: clamp(30px, 3%, 60px);
+}
+@media screen and (max-width: 1139px) {
+  .catalog__inner {
+    margin-top: 0;
+  }
 }
 @media screen and (max-width: 1033px) {
   .catalog__inner {
@@ -477,8 +482,16 @@ img {
 
 .live-example {
   position: relative;
-  margin-top: 150px;
   padding: 70px 20px 0;
+}
+.live-example .background {
+  position: absolute;
+  width: 100%;
+  height: 800px;
+  top: 262px;
+  left: 0;
+  z-index: -1;
+  background-color: #F2F2F2;
 }
 .live-example__inner {
   display: flex;
@@ -567,7 +580,7 @@ img {
 .slider__cat-images-container {
   position: relative;
   width: 100%;
-  padding-bottom: 76%;
+  height: 500px;
   overflow: hidden;
   margin-bottom: 50px;
   margin-top: 50px;
@@ -576,7 +589,7 @@ img {
   position: absolute;
   width: inherit;
   height: inherit;
-  object-fit: cover;
+  object-fit: contain;
   top: 0;
   left: 0;
 }
@@ -621,6 +634,7 @@ img {
 
 .contacts {
   position: relative;
+  margin-top: 67px;
   padding-top: 95px;
   background: #F2F2F2;
   padding-bottom: 150px;
